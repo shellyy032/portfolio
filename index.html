@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Portfolio</title>
+    <link rel="stylesheet" href="portfolio.css">
+    <link rel="stylesheet" href="mediaquery.css">
+</head>
+<body>
+    <nav id="port-nav">
+        <div class="logo">Shelly</div>
+        <div>
+            <ul class="nav-links">
+                <li><a href="#about">About</a></li>
+                <li><a href="#experience">Skills</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+    <nav id="hamburger-nav">
+        <div class="logo">Shelly</div>
+        <div class="hamburger-menu">
+            <div class="hamburger-icon" onclick="toggleMenu()">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+            <ul class="menu-links">
+                <li><a href="#about" onclick="toggleMenu()">About</a></li>
+                <li><a href="#skills" onclick="toggleMenu()">Skills</a></li>
+                <li><a href="#projects" onclick="toggleMenu()">Projects</a></li>
+                <li><a href="#contact" onclick="toggleMenu()">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+    <section id="profile">
+        <div class="section__pic-container">
+          <img src="./icon/profile.png" alt="Shelly profile picture" />
+        </div>
+        <div class="section__text">
+          <p class="section__text__p1">Hello, I'm</p>
+          <h1 class="title">Shelly</h1>
+          <p class="section__text__p2">Information Technology Student</p>
+          <div class="btn-container">
+            <button class="btn btn-color-1" onclick="location.href='./#contact'">Contact Info</button>
+          </div>
+          <div id="socials-container">
+            <img src="data:image/png;base64,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" alt="WhatsApp" class="icon" onclick="location.href='wa.me/+6287842364600"/>
+            <img src="https://www.citypng.com/public/uploads/preview/hd-white-outline-round-instagram-logo-icon-png-7017516951188810uvfjvesqu.png" alt="My Github profile" class="icon" onclick="location.href='https://www.instagram.com/schgg.?igsh=Z3Z4ZmVlcGVhcWls'"/>
+          </div>
+        </div>
+      </section>
+      <section id="about">
+        <p class="section__text__p1">Get To Know More</p>
+        <h1 class="title">About Me</h1>
+        <div class="section-container">
+          <div class="section__pic-container">
+            <img
+              src="./icon/profile-pic.png"
+              alt="Profile picture"
+              class="about-pic"
+            />
+          </div>
+          <div class="text-container">
+            <p>
+              Hello, I'm Shelly, an Information Technology student at Universitas Sumatera Utara, Faculty of Computer Science and Information Technology (Fasilkom-TI). My focus is on areas like software development, data science, and systems analysis.
+              Throughout my studies, I’ve developed skills in coding, problem-solving, and analytical thinking. I’m looking forward to applying these skills in real-world projects and enjoy working with others on group tasks or participating in tech-related events.
+              In the future, I aim to work in a dynamic tech environment where I can continue to grow and contribute to the field. Feel free to reach out for collaboration or opportunities in Information Technology!
+            </p>
+          </div>
+          <div class="about-details-container">
+            <div class="about-containers">
+              <div class="details-container">
+              <div class="details-container">
+                <img
+                  src="./icon/education.png"
+                  alt="Education icon"
+                  class="icon"
+                />
+                <h3>Education</h3>
+                <p>W. R. Supratman 2 Medan (2021-2024)<br />University of North Sumatera (2025-NOW)</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <img
+          src="./icon/arrow.png"
+          alt="Arrow icon"
+          class="icon arrow"
+          onclick="location.href='./#experience'"
+        />
+      </section>
+      <section id="">
+        <p class="section__text__p1">Explore My</p>
+        <h1 class="title">Skills</h1>
+        <div class="experience-details-container">
+          <div class="about-containers">
+            <div class="details-container">
+              <h2 class="experience-sub-title">Hard Skills</h2>
+              <div class="article-container">
+                <article>
+                  <img
+                    src="./icon/checkmark.png"
+                    alt="Experience icon"
+                    class="icon"
+                  />
+                  <div>
+                    <h3>HTML</h3>
+                    <p>Experienced</p>
+                  </div>
+                </article>
+                <article>
+                  <img
+                    src="./icon/checkmark.png"
+                    alt="Experience icon"
+                    class="icon"
+                  />
+                  <div>
+                    <h3>CSS</h3>
+                    <p>Experienced</p>
+                  </div>
+                </article>
+                <article>
+                  <img
+                    src="./icon/checkmark.png"
+                    alt="Experience icon"
+                    class="icon"
+                  />
+                  <div>
+                    <h3>JavaScript</h3>
+                    <p>Basic</p>
+                  </div>
+                </article>
+                <article>
+                  <img
+                    src="./icon/checkmark.png"
+                    alt="Experience icon"
+                    class="icon"
+                  />
+                  <div>
+                    <h3>Material UI</h3>
+                    <p>Intermediate</p>
+                  </div>
+                </article>
+              </div>
+            </div>
+            <div class="details-container">
+              <h2 class="experience-sub-title">Soft Skills</h2>
+              <div class="article-container">
+                <article>
+                  <img
+                    src="./icon/checkmark.png"
+                    alt="Experience icon"
+                    class="icon"
+                  />
+                  <div>
+                    <h3>Respectfulness</h3>
+                  </div>
+                </article>
+                <article>
+                  <img
+                    src="./icon/checkmark.png"
+                    alt="Experience icon"
+                    class="icon"
+                  />
+                  <div>
+                    <h3>Time-management</h3>
+                  </div>
+                </article>
+                <article>
+                  <img
+                    src="./icon/checkmark.png"
+                    alt="Experience icon"
+                    class="icon"
+                  />
+                  <div>
+                    <h3>Teamwork Capability</h3>
+                  </div>
+                </article>
+                <article>
+                  <img
+                    src="./icon/checkmark.png"
+                    alt="Experience icon"
+                    class="icon"
+                  />
+                  <div>
+                    <h3>Analytical Thinking</h3>
+                  </div>
+                </article>
+              </div>
+            </div>
+          </div>
+        </div>
+        <img
+          src="./icon/arrow.png"
+          alt="Arrow icon"
+          class="icon arrow"
+          onclick="location.href='./#projects'"
+        />
+      </section>
+      
+      <section id="projects">
+        <p class="section__text__p1">Browse My Recent</p>
+        <h1 class="title">Projects</h1>
+        <div class="experience-details-container">
+          <div class="about-containers">
+            <div class="details-container color-container">
+              <div class="article-container">
+                <img
+                  src="./icon/project-1.png"
+                  alt="Project 1"
+                  class="project-img"
+                />
+              </div>
+              <h2 class="experience-sub-title project-title">Cashier</h2>
+              <div class="btn-container">
+              <p>A cashier menu system in C lets users select food items, enter quantities, and calculates the total cost. It displays a menu, takes input for choices, and provides a summary for payment.</p>
+              </div>
+            </div>
+            <div class="details-container color-container">
+              <div class="article-container">
+                <img
+                  src="./icon/project-2.png"
+                  alt="Project 2"
+                  class="project-img"
+                />
+              </div>
+              <h2 class="experience-sub-title project-title">Digital Power Supply</h2>
+              <div class="btn-container">
+              <p>A digital power supply with adjustable voltage and current, equipped with an LCD display for monitoring. This allows users to precisely control and monitor the output voltage and current in real-time, making it ideal for various testing and power applications.</p>
+              </div>
+            </div>
+            <div class="details-container color-container">
+              <div class="article-container">
+                <img
+                  src="./icon/project-3.png"
+                  alt="Project 3"
+                  class="project-img"
+                />
+              </div>
+              <h2 class="experience-sub-title project-title">Gifezz</h2>
+              <div class="btn-container">
+              <p>Gifezz is a platform where users can anonymously share confessions, thoughts, or feelings on various topics, often using text, images, or GIFs, without revealing their identity.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <img
+          src="./icon/arrow.png"
+          alt="Arrow icon"
+          class="icon arrow"
+          onclick="location.href='./#contact'"
+        />
+      </section>
+      <section id="contact">
+        <p class="section__text__p1">Feel Free To</p>
+        <h1 class="title">Contact Me</h1>
+        <div class="section-container">
+          <div class="section__text">
+            <h2>Connect with me</h2>
+            <p>If you have any questions or want to get in touch, feel free to contact me.</p>
+            <div class="btn-container">
+              <button
+                class="btn btn-color-1"
+                onclick="window.location.href='shellchanggg.com'"
+              >
+                Email Me
+              </button>
+            </div>
+          </div>
+        </div>
+      </section>
+      <footer>
+        <p>© 2025 Shelly</p>
+      </footer>
+
+    <script src="portfolio.js"></script>
+</body>
+</html>
